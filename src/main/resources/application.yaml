@@ -1,0 +1,30 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: SpringTest
+  config:
+    activate:
+      on-profile: default
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mysql?useSSL=false&allowPublicKeyRetrieval=true&useUnicode=true&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: root
+    password: tjdahrla
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: create
+      naming:
+          physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      use-new-id-generator-mapping: false
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
+      dialect: org.hibernate.dialect.MySQL8InnoDBDialect
+
+  logging:
+    level:
+      org.hibernate.SQL: debug
+
